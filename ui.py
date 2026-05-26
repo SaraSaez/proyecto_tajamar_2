@@ -1,6 +1,7 @@
 import gastos
 
-def ejecutar_ui():
+def ejecutar_ui(gestor):
+    #recibe una instancia de GestorGastos como parametro
     while True:
         print("\n--- GESTOR DE GASTOS ---")
         print("1. Añadir gasto")
@@ -14,13 +15,14 @@ def ejecutar_ui():
             concepto = input("¿En qué gastaste?: ")
             cantidad = float(input("¿Cuánto costó?: "))
             
-            if gastos.agregar_gasto(concepto, cantidad):
+            #se llama al método del objeto 'gestor'
+            if gestor.agregar_gasto(concepto, cantidad):
                 print("¡Gasto guardado!")
             else:
                 print("Error: La cantidad debe ser mayor que 0.")
 
         elif opcion == "2":
-            todos = gastos.obtener_gastos()
+            todos = gestor.obtener_gastos()
             if len(todos) == 0:
                 print("No hay gastos registrados.")
             else:
@@ -28,7 +30,7 @@ def ejecutar_ui():
                     print(f"- {g['concepto']}: ${g['cantidad']}")
 
         elif opcion == "3":
-            total = gastos.calcular_total()
+            total = gestor.calcular_total()
             print(f"Total gastado: ${total}")
 
         elif opcion == "4":

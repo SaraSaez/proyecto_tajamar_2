@@ -1,7 +1,8 @@
 import pytest
-import gastos
+from gastos import GestorGastos
 
-@pytest.fixture(autouse=True)
-def limpiar_datos():
-    #Borra los gastos antes de cada test para que empiecen de cero
-    gastos.borrar_gastos()
+@pytest.fixture
+def gestor_vacio():
+    #Devuelve una instancia nueva y limpia de GestorGastos 
+    # para cada test
+    return GestorGastos()
