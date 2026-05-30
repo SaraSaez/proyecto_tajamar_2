@@ -1,25 +1,26 @@
 
-# Esta lista guardará los gastos en memoria
-lista_gastos = []
+class GestorGastos:
+    def __init__(self):
+        self.lista_gastos = []
 
-def agregar_gasto(concepto, cantidad):
-    if cantidad <= 0:
-        return False
+    def agregar_gasto(self, concepto, cantidad):
+        if cantidad <= 0:
+            return False
     
-    # Creamos un diccionario simple para el gasto
-    nuevo_gasto = {"concepto": concepto, "cantidad": cantidad}
-    lista_gastos.append(nuevo_gasto)
-    return True
+    # Crear un diccionario para el gasto
+        nuevo_gasto = {"concepto": concepto, "cantidad": cantidad}
+        self.lista_gastos.append(nuevo_gasto)
+        return True
 
-def obtener_gastos():
-    return lista_gastos
+    def obtener_gastos(self):
+        return self.lista_gastos
 
-def calcular_total():
-    total = 0
-    for gasto in lista_gastos:
-        total += gasto["cantidad"]
-    return total
+    def calcular_total(self):
+        total = 0
+        for gasto in self.lista_gastos:
+            total += gasto["cantidad"]
+        return total
 
-def borrar_gastos():
-    """Función auxiliar para vaciar la lista en los tests"""
-    lista_gastos.clear()
+    def borrar_gastos(self):
+    #Función auxiliar para limpiar  la lista
+        self.lista_gastos.clear()
