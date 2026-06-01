@@ -22,3 +22,12 @@ class Inventory():
             self.peso_total -= item.peso
             self.valor_total -= item.valor
 
+    def mostrar_peso_valor(self):
+        print("Peso total del inventario:", self.peso_total)
+        print("Valor total del inventario:", self.valor_total)
+
+    def mostrar_inventario(self):
+        print("--- LISTA DE OBJETOS ---")
+        for item in self.items:
+            print("Nombre:", item.nombre, "| Tipo:", item.tipo, "| Peso:", item.peso, "| Valor:", item.valor)
+

@@ -26,4 +26,8 @@ assert len(mochila.items) == 1
 assert mochila.peso_total == 3.0
 assert mochila.valor_total == 100
 
+# Test 5: Verificar los métodos de mostrar 
+mochila.mostrar_inventario()
+mochila.mostrar_peso_valor()
+
 print("¡Todos los tests han pasado con éxito!")
