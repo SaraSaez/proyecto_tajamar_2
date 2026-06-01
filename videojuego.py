@@ -5,11 +5,12 @@ class Item():
         self.peso = peso
         self.valor = valor
 
-class Inventory():
+class Inventory:
     def __init__(self):
-        self.items= []
-        self.peso_total = 0.0
+        self.items = [] 
+        self.peso_total = 0.0         
         self.valor_total = 0
+
 
     def añadir_item(self, item):
         self.items.append(item)
